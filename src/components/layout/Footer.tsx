@@ -15,8 +15,6 @@ const policyLinks = [
 ] as const;
 
 export function Footer() {
-  const wa = `https://wa.me/${siteConfig.whatsapp}`;
-
   return (
     <footer className="mt-12 border-t border-brand-navy/10 bg-brand-navy text-brand-white sm:mt-20">
       <div className="container-lp py-8 sm:py-14">
@@ -75,14 +73,6 @@ export function Footer() {
               </a>
               <a href="tel:+233540357260" className="hover:text-brand-gold">
                 {siteConfig.phone}
-              </a>
-              <a
-                href={wa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-brand-gold"
-              >
-                WhatsApp
               </a>
             </div>
             <p className="mt-3 text-xs text-white/50">
