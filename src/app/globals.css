@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy: #1a1a2e;
+  --brand-gold: #c9a962;
+  --brand-rose: #e8c4c4;
+  --brand-ink: #1a1a1a;
+  --brand-white: #faf8f5;
+  --brand-mist: #f2f0eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-white text-brand-ink font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(201, 169, 98, 0.09), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(232, 196, 196, 0.12), transparent 28%),
+    linear-gradient(180deg, #faf8f5 0%, #f2f0eb 100%);
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container-lp {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-brand-gold px-6 py-3 text-sm font-semibold tracking-wide text-brand-navy transition duration-300 hover:bg-[#b8984f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-brand-navy bg-transparent px-6 py-3 text-sm font-semibold tracking-wide text-brand-navy transition duration-300 hover:bg-brand-navy hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-4 py-2 text-sm font-medium text-brand-navy transition hover:text-brand-gold;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl text-brand-navy sm:text-4xl;
+  }
+
+  .input-field {
+    @apply w-full rounded-sm border border-brand-navy/15 bg-white px-4 py-3 text-sm text-brand-ink outline-none transition placeholder:text-brand-ink/40 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20;
+  }
+
+  .label-field {
+    @apply mb-1.5 block text-sm font-medium text-brand-navy;
+  }
+
+  .badge-authentic {
+    @apply inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
