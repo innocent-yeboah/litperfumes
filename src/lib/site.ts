@@ -5,7 +5,7 @@ export const siteConfig = {
     "Lit Perfumes is an authorized reseller of authentic designer and niche fragrances — delivered across Ghana and West Africa.",
   email: "hello@litperfumes.com",
   phone: "+233 54 035 7260",
-  location: "Accra, Ghana",
+  location: "Kumasi, Ghana",
   whatsapp:
     process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS_NUMBER ??
     process.env.WHATSAPP_BUSINESS_NUMBER ??

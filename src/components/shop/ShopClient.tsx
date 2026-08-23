@@ -54,7 +54,7 @@ export function ShopClient({
         </select>
       </div>
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-3">
         {filtered.map((product) => {
           const variant = product.variants[0];
           const available = variant ? availableStock(variant) : 0;
@@ -70,16 +70,16 @@ export function ShopClient({
                   alt={`${product.brand} ${product.name}`}
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
-                  sizes="(max-width:768px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-              <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold">
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-gold sm:mt-4 sm:text-[11px] sm:tracking-[0.18em]">
                 {product.brand}
               </p>
-              <h2 className="mt-1 font-display text-2xl text-brand-navy">
+              <h2 className="mt-0.5 font-display text-base text-brand-navy sm:mt-1 sm:text-2xl">
                 {product.name}
               </h2>
-              <p className="mt-1 text-sm text-brand-navy/70">
+              <p className="mt-0.5 text-xs text-brand-navy/70 sm:mt-1 sm:text-sm">
                 from {formatGhs(variant?.priceGhs ?? 0)}
                 {available === 0 ? (
                   <span className="ml-2 text-red-600">Sold out</span>
