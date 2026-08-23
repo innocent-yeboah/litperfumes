@@ -280,10 +280,11 @@ export function CheckoutForm() {
                 <input type="radio" value="paystack" {...register("paymentMethod")} />
                 <span>
                   <span className="block font-medium text-brand-navy">
-                    Pay online (card / bank / USSD)
+                    Pay online — Mobile Money or card
                   </span>
                   <span className="text-sm text-brand-navy/60">
-                    Secure payment via Paystack. Confirmation only after payment is verified.
+                    MTN MoMo, Telecel Cash, AirtelTigo, or debit/credit card via Paystack.
+                    Confirmed only after payment is verified.
                   </span>
                 </span>
               </label>
@@ -323,7 +324,7 @@ export function CheckoutForm() {
                   ? "Placing order…"
                   : paymentMethod === "cod"
                     ? "Place COD order"
-                    : "Pay with Paystack"}
+                    : "Pay with MoMo or card"}
               </button>
             </div>
           </div>

@@ -33,6 +33,8 @@ export async function initializePaystackTransaction(input: {
       reference: input.reference,
       callback_url: input.callbackUrl,
       currency: "GHS",
+      // Ghana: card + Mobile Money (MTN, Telecel, AirtelTigo) + bank/USSD
+      channels: ["card", "mobile_money", "bank", "ussd"],
       metadata: input.metadata,
     }),
   });
