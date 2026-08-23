@@ -86,7 +86,7 @@ export function Footer() {
               </a>
             </div>
             <p className="mt-3 text-xs text-white/50">
-              {siteConfig.location} · GHS · Ghana &amp; West Africa
+              {siteConfig.location} · GHS
             </p>
           </div>
         </div>
