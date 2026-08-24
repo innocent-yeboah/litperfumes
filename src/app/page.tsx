@@ -82,7 +82,7 @@ export default async function HomePage() {
                   {product.name}
                 </h3>
                 <p className="mt-0.5 text-xs text-brand-navy/70 sm:mt-1 sm:text-sm">
-                  from {formatGhs(variant?.priceGhs ?? 0)}
+                  {formatGhs(variant?.priceGhs ?? 0)}
                   {available > 0 && available <= 5 ? (
                     <span className="ml-2 text-brand-rose">Only {available} left</span>
                   ) : null}

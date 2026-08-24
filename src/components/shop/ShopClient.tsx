@@ -80,7 +80,7 @@ export function ShopClient({
                 {product.name}
               </h2>
               <p className="mt-0.5 text-xs text-brand-navy/70 sm:mt-1 sm:text-sm">
-                from {formatGhs(variant?.priceGhs ?? 0)}
+                {formatGhs(variant?.priceGhs ?? 0)}
                 {available === 0 ? (
                   <span className="ml-2 text-red-600">Sold out</span>
                 ) : available <= 5 ? (
