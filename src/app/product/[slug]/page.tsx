@@ -17,7 +17,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   return (
-    <div className="container-lp py-12 sm:py-16">
+    <div className="container-lp pb-28 py-12 sm:py-16 lg:pb-16">
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="relative aspect-[3/4] overflow-hidden bg-brand-mist">
           <Image
