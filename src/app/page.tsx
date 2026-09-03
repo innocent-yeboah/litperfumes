@@ -16,15 +16,14 @@ export default async function HomePage() {
             alt="Tom Ford Oud Wood presented as a luxury gift — black box, gold ribbon, amber bottle"
             fill
             priority
-            className="object-cover object-[72%_8%] scale-[1.2] sm:object-[70%_42%] sm:scale-100"
+            className="object-cover object-[50%_18%] sm:object-[50%_28%]"
             sizes="100vw"
             quality={90}
           />
         </div>
-        {/* Soft top wash + strong lower veil so the bottle stays clear and copy reads cleanly */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/50 via-transparent to-transparent sm:from-brand-navy/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/45 via-transparent to-transparent" />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-brand-navy from-15% via-brand-navy/90 to-transparent sm:h-[48%]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-brand-navy from-20% via-brand-navy/88 to-transparent sm:h-[42%]"
           aria-hidden
         />
 
