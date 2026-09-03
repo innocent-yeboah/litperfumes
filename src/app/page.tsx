@@ -9,49 +9,49 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative min-h-[92vh] overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[100svh] overflow-hidden bg-brand-navy sm:min-h-[92vh]">
         <div className="absolute inset-0 animate-hero-ken">
           <Image
             src="/hero-oud-wood-gift.png"
             alt="Tom Ford Oud Wood presented as a luxury gift — black box, gold ribbon, amber bottle"
             fill
             priority
-            className="object-cover object-[62%_40%] sm:object-[70%_42%]"
+            className="object-cover object-[72%_8%] scale-[1.2] sm:object-[70%_42%] sm:scale-100"
             sizes="100vw"
             quality={90}
           />
         </div>
-        <div className="absolute inset-0 bg-hero-wash" />
-        <div className="absolute inset-0 bg-hero-vignette" />
+        {/* Soft top wash + strong lower veil so the bottle stays clear and copy reads cleanly */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/50 via-transparent to-transparent sm:from-brand-navy/35" />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-navy/80 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-brand-navy from-15% via-brand-navy/90 to-transparent sm:h-[48%]"
           aria-hidden
         />
 
-        <div className="container-lp relative flex min-h-[92vh] flex-col justify-end pb-16 pt-28 sm:pb-24">
+        <div className="container-lp relative flex min-h-[100svh] flex-col justify-end pb-24 pt-28 sm:min-h-[92vh] sm:pb-24">
           <div className="max-w-xl">
-            <h1 className="animate-fade-up font-display text-[2.75rem] leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="animate-fade-up font-display text-[2.6rem] leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)] sm:text-6xl lg:text-7xl">
               Lit{" "}
               <span className="text-brand-gold">Perfumes</span>
             </h1>
             <div
-              className="mt-5 h-px w-24 origin-left bg-brand-gold animate-gold-line"
+              className="mt-4 h-px w-20 origin-left bg-brand-gold animate-gold-line sm:mt-5 sm:w-24"
               aria-hidden
             />
-            <p className="mt-6 max-w-md animate-fade-up text-base leading-relaxed text-white/88 sm:text-lg [animation-delay:160ms]">
+            <p className="mt-5 max-w-md animate-fade-up text-[15px] leading-relaxed text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)] sm:mt-6 sm:text-lg [animation-delay:160ms]">
               Oud Wood, gift-ready. The scent you&apos;ve been searching for —
               authentically sourced, beautifully presented.
             </p>
-            <div className="mt-9 flex animate-fade-up flex-wrap gap-3 [animation-delay:280ms]">
+            <div className="mt-8 flex w-full animate-fade-up flex-col gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap [animation-delay:280ms]">
               <Link
                 href="/product/tom-ford-oud-wood"
-                className="btn-primary px-8 py-3.5 text-base shadow-[0_8px_30px_rgba(201,169,98,0.35)]"
+                className="btn-primary w-full justify-center px-8 py-3.5 text-base shadow-[0_8px_30px_rgba(201,169,98,0.35)] sm:w-auto"
               >
                 Discover Oud Wood
               </Link>
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/45 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-brand-gold hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-sm border border-white/70 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-brand-gold hover:bg-white/15 sm:w-auto"
               >
                 Shop the collection
               </Link>

@@ -115,6 +115,28 @@ async function main() {
     }
   }
 
+  const keepSlugs = seedProducts.map((p) => p.slug);
+  const { data: allProducts, error: listError } = await supabase
+    .from("products")
+    .select("id, slug, active");
+  if (listError) {
+    console.error("Could not list products for cleanup:", listError.message);
+  } else {
+    for (const row of allProducts ?? []) {
+      if (!keepSlugs.includes(row.slug as string) && row.active) {
+        const { error } = await supabase
+          .from("products")
+          .update({ active: false, updated_at: new Date().toISOString() })
+          .eq("id", row.id);
+        if (error) {
+          console.error(`Deactivate ${row.slug}:`, error.message);
+        } else {
+          console.log(`Deactivated legacy product ${row.slug}`);
+        }
+      }
+    }
+  }
+
   console.log("Seed complete.");
 }
 
