@@ -65,92 +65,87 @@ export function AddToCartPanel({ product }: { product: Product }) {
           {formatGhs(variant?.priceGhs ?? 0)}
         </p>
 
-        <div className="rounded-sm border-2 border-brand-gold/35 bg-white p-5 shadow-sm sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-gold">
-            Add to your order
-          </p>
-
-          <div className="mt-4">
-            <label className="label-field" htmlFor="size">
-              Size
-            </label>
-            <div className="flex flex-wrap gap-2">
-              {product.variants.map((v) => {
-                const avail = availableStock(v);
-                return (
-                  <button
-                    key={v.id}
-                    type="button"
-                    disabled={avail === 0}
-                    onClick={() => setVariantId(v.id)}
-                    className={`rounded-sm border px-4 py-2 text-sm transition ${
-                      variantId === v.id
-                        ? "border-brand-gold bg-brand-gold/15 font-semibold text-brand-navy"
-                        : "border-brand-navy/20 text-brand-navy"
-                    } disabled:cursor-not-allowed disabled:opacity-40`}
-                  >
-                    {v.sizeMl}ml — {formatGhs(v.priceGhs)}
-                  </button>
-                );
-              })}
-            </div>
-            {available > 0 && available <= 5 ? (
-              <p className="mt-2 text-sm font-medium text-brand-rose">
-                Only {available} left
-              </p>
-            ) : null}
-            {available === 0 ? (
-              <p className="mt-2 text-sm font-medium text-red-600">Sold out</p>
-            ) : null}
+        <div>
+          <label className="label-field" htmlFor="size">
+            Size
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {product.variants.map((v) => {
+              const avail = availableStock(v);
+              return (
+                <button
+                  key={v.id}
+                  type="button"
+                  disabled={avail === 0}
+                  onClick={() => setVariantId(v.id)}
+                  className={`rounded-sm border px-4 py-2 text-sm transition ${
+                    variantId === v.id
+                      ? "border-brand-gold bg-brand-gold/15 font-semibold text-brand-navy"
+                      : "border-brand-navy/20 text-brand-navy"
+                  } disabled:cursor-not-allowed disabled:opacity-40`}
+                >
+                  {v.sizeMl}ml — {formatGhs(v.priceGhs)}
+                </button>
+              );
+            })}
           </div>
-
-          <div className="mt-4">
-            <label className="label-field" htmlFor="qty">
-              Quantity
-            </label>
-            <input
-              id="qty"
-              type="number"
-              min={1}
-              max={Math.max(1, available)}
-              value={qty}
-              onChange={(e) => setQty(Number(e.target.value) || 1)}
-              className="input-field max-w-[120px]"
-            />
-          </div>
-
-          <div className="mt-6 space-y-3">
-            <button
-              type="button"
-              className="btn-primary w-full py-4 text-base shadow-md"
-              disabled={available === 0}
-              onClick={() => handleAdd(false)}
-            >
-              <ShoppingBag className="h-5 w-5" aria-hidden />
-              {addLabel}
-            </button>
-            <button
-              type="button"
-              className="btn-secondary w-full py-3"
-              disabled={available === 0}
-              onClick={() => handleAdd(true)}
-            >
-              Buy now
-            </button>
-          </div>
-
-          {message ? (
-            <p
-              className={`mt-3 text-center text-sm font-medium ${
-                message === "Added to cart."
-                  ? "text-emerald-700"
-                  : "text-brand-navy/70"
-              }`}
-            >
-              {message}
+          {available > 0 && available <= 5 ? (
+            <p className="mt-2 text-sm font-medium text-brand-rose">
+              Only {available} left
             </p>
           ) : null}
+          {available === 0 ? (
+            <p className="mt-2 text-sm font-medium text-red-600">Sold out</p>
+          ) : null}
         </div>
+
+        <div>
+          <label className="label-field" htmlFor="qty">
+            Quantity
+          </label>
+          <input
+            id="qty"
+            type="number"
+            min={1}
+            max={Math.max(1, available)}
+            value={qty}
+            onChange={(e) => setQty(Number(e.target.value) || 1)}
+            className="input-field max-w-[120px]"
+          />
+        </div>
+
+        {/* Desktop CTAs — mobile uses the sticky bar only */}
+        <div className="hidden space-y-3 lg:block">
+          <button
+            type="button"
+            className="btn-primary w-full py-4 text-base shadow-md"
+            disabled={available === 0}
+            onClick={() => handleAdd(false)}
+          >
+            <ShoppingBag className="h-5 w-5" aria-hidden />
+            {addLabel}
+          </button>
+          <button
+            type="button"
+            className="btn-secondary w-full py-3"
+            disabled={available === 0}
+            onClick={() => handleAdd(true)}
+          >
+            Buy now
+          </button>
+        </div>
+
+        {message ? (
+          <p
+            className={`text-sm font-medium ${
+              message === "Added to cart."
+                ? "text-emerald-700"
+                : "text-brand-navy/70"
+            }`}
+          >
+            {message}
+          </p>
+        ) : null}
       </div>
 
       {available > 0 ? (

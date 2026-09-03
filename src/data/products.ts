@@ -17,7 +17,7 @@ export const seedProducts: Product[] = [
     notesMid: ["Oud", "Sandalwood"],
     notesBase: ["Tonka Bean", "Amber"],
     images: [
-      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80",
+      "/product-images/product-oud-wood.png",
     ],
     featured: true,
     active: true,
@@ -53,7 +53,7 @@ export const seedProducts: Product[] = [
     notesMid: ["Oud", "Labdanum"],
     notesBase: ["Vanilla", "Dried Fruits"],
     images: [
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80",
+      "/product-images/product-tobacco-oud.png",
     ],
     featured: true,
     active: true,
@@ -89,7 +89,7 @@ export const seedProducts: Product[] = [
     notesMid: ["Oud", "Benzoin"],
     notesBase: ["Vanilla", "Amber"],
     images: [
-      "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=800&q=80",
+      "/product-images/product-oud-satin-mood.png",
     ],
     featured: true,
     active: true,
@@ -125,7 +125,7 @@ export const seedProducts: Product[] = [
     notesMid: ["Oud", "Cedar"],
     notesBase: ["Sandalwood", "Musk"],
     images: [
-      "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&q=80",
+      "/product-images/product-royal-oud.png",
     ],
     featured: true,
     active: true,
