@@ -9,37 +9,53 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative min-h-[85vh] overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1600&q=80"
-          alt="Luxury perfume bottle on warm surface"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+      <section className="relative min-h-[92vh] overflow-hidden bg-brand-navy">
+        <div className="absolute inset-0 animate-hero-ken">
+          <Image
+            src="/hero-oud-wood-gift.png"
+            alt="Tom Ford Oud Wood presented as a luxury gift — black box, gold ribbon, amber bottle"
+            fill
+            priority
+            className="object-cover object-[62%_40%] sm:object-[70%_42%]"
+            sizes="100vw"
+            quality={90}
+          />
+        </div>
         <div className="absolute inset-0 bg-hero-wash" />
-        <div className="container-lp relative flex min-h-[85vh] flex-col justify-end pb-16 pt-28 sm:pb-24">
-          <p className="badge-authentic animate-fade-up">
-            {siteConfig.authenticityBadge}
-          </p>
-          <h1 className="mt-4 max-w-2xl animate-fade-up font-display text-4xl text-white sm:text-6xl [animation-delay:80ms]">
-            Lit Perfumes
-          </h1>
-          <p className="mt-4 max-w-lg animate-fade-up text-base text-white/85 sm:text-lg [animation-delay:140ms]">
-            {siteConfig.tagline}. Designer and niche fragrances, verified authentic,
-            delivered with care.
-          </p>
-          <div className="mt-8 flex animate-fade-up flex-wrap gap-3 [animation-delay:200ms]">
-            <Link href="/shop" className="btn-primary">
-              Shop fragrances
-            </Link>
-            <Link
-              href="/authenticity"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Our guarantee
-            </Link>
+        <div className="absolute inset-0 bg-hero-vignette" />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-navy/80 to-transparent"
+          aria-hidden
+        />
+
+        <div className="container-lp relative flex min-h-[92vh] flex-col justify-end pb-16 pt-28 sm:pb-24">
+          <div className="max-w-xl">
+            <h1 className="animate-fade-up font-display text-[2.75rem] leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Lit{" "}
+              <span className="text-brand-gold">Perfumes</span>
+            </h1>
+            <div
+              className="mt-5 h-px w-24 origin-left bg-brand-gold animate-gold-line"
+              aria-hidden
+            />
+            <p className="mt-6 max-w-md animate-fade-up text-base leading-relaxed text-white/88 sm:text-lg [animation-delay:160ms]">
+              Oud Wood, gift-ready. The scent you&apos;ve been searching for —
+              authentically sourced, beautifully presented.
+            </p>
+            <div className="mt-9 flex animate-fade-up flex-wrap gap-3 [animation-delay:280ms]">
+              <Link
+                href="/product/tom-ford-oud-wood"
+                className="btn-primary px-8 py-3.5 text-base shadow-[0_8px_30px_rgba(201,169,98,0.35)]"
+              >
+                Discover Oud Wood
+              </Link>
+              <Link
+                href="/shop"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/45 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-brand-gold hover:bg-white/10"
+              >
+                Shop the collection
+              </Link>
+            </div>
           </div>
         </div>
       </section>

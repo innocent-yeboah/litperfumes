@@ -25,7 +25,9 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-wash":
-          "linear-gradient(135deg, rgba(26,26,46,0.78) 0%, rgba(26,26,46,0.4) 50%, rgba(201,169,98,0.28) 100%)",
+          "linear-gradient(180deg, rgba(26,26,46,0.55) 0%, rgba(26,26,46,0.25) 38%, rgba(26,26,46,0.72) 100%)",
+        "hero-vignette":
+          "radial-gradient(ellipse at 70% 40%, transparent 0%, rgba(26,26,46,0.45) 70%, rgba(26,26,46,0.75) 100%)",
         "gold-fade":
           "linear-gradient(180deg, rgba(201,169,98,0.12) 0%, rgba(250,248,245,0) 100%)",
       },
@@ -38,10 +40,20 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "hero-ken": {
+          "0%": { transform: "scale(1.08)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "gold-line": {
+          "0%": { transform: "scaleX(0)", opacity: "0" },
+          "100%": { transform: "scaleX(1)", opacity: "1" },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.7s ease-out both",
-        "fade-in": "fade-in 0.6s ease-out both",
+        "fade-up": "fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "fade-in": "fade-in 1s ease-out both",
+        "hero-ken": "hero-ken 8s ease-out both",
+        "gold-line": "gold-line 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both",
       },
     },
   },
